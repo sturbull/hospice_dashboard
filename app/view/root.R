@@ -1,10 +1,10 @@
 box::use(
-  shiny[h1, div, moduleServer, NS, tags],
+  shiny[h1, h2, div, moduleServer, NS, tags],
   shiny.tailwind[use_tailwind],
 )
 
 box::use(
-  app/components/react[AppLayout],
+  app / components / react[AppLayout],
 )
 
 # FONT_URL <- "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
@@ -31,11 +31,19 @@ ui <- function(..., id) {
       tags$link(
         rel = "stylesheet",
         href = FONT_URL,
-        media="print",
-        onload='this.media="all"'
+        media = "print",
+        onload = 'this.media="all"'
       )
     ),
     AppLayout(
+      navMenu = div(
+        h2("Nav Menu", class = "text-2xl font-bold m-4"),
+        tags$ul(
+          class="mx-4 my-2",
+          tags$li("Menu Item 1", class = "text-lg font-medium"),
+          tags$li("Menu Item 2", class = "text-lg font-medium"),
+        )
+      ),
       h1("Page Title", class = "text-4xl font-bold"),
       ...
     )

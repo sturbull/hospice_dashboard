@@ -2,7 +2,7 @@ box::use(
   shiny[bootstrapPage, div, moduleServer, NS, renderUI, tags, uiOutput],
 )
 box::use(
-  app/view/root,
+  app / view / root,
 )
 
 
@@ -10,7 +10,7 @@ box::use(
 ui <- function(id) {
   ns <- NS(id)
   root$ui(
-    id=ns("root"),
+    id = ns("root"),
     div("Testing")
   )
 }
