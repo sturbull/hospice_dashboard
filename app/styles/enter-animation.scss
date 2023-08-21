@@ -1,0 +1,69 @@
+
+// PAGE ANIMATIONS
+/* credit: paco coursey https://paco.me/ */
+[data-animation-controller="false"] {
+  [data-router-animate], [data-animate] {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+
+[data-animate],[data-router-animate] {
+    --stagger: 0;
+    --delay: 100ms;
+    --start: 0ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    [data-animate], [data-router-animate].router:not(.router-hidden) {
+        -webkit-animation: enter_o98723ui 0.6s both;
+        animation: enter_o98723ui 0.6s both;
+        -webkit-animation-delay: calc(var(--stagger) * var(--delay) + var(--start));
+        animation-delay: calc(var(--stagger) * var(--delay) + var(--start));
+    }
+
+    [data-animate][data-fade-in], [data-router-animate].router:not(.router-hidden)[data-fade-in] {
+        -webkit-animation: _fadeIn_o0ap23h_1 0.8s both;
+        animation: _fadeIn_o0ap23h_1 0.8s both;
+    }
+}
+
+@-webkit-keyframes _fadeIn_o0ap23h_1 {
+    0% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes _fadeIn_o0ap23h_1 {
+    0% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes enter_o98723ui {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes enter_o98723ui {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}

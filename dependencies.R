@@ -2,3 +2,4 @@
 library(rhino)
 library(shiny.tailwind)
 library(shiny.react)
+library(shiny.router)

@@ -1,7 +1,7 @@
-import AppLayout from './AppLayout/AppLayout.jsx';
+import NavMenu from './AppLayout/NavMenu.jsx';
 
 const components = {
-  AppLayout
+  NavMenu
 };
 
 export default components;

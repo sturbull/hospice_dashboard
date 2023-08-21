@@ -802,6 +802,19 @@
       ],
       "Hash": "ef9e3966d3cd63ea006296bd7b7d4dcb"
     },
+    "shiny.router": {
+      "Package": "shiny.router",
+      "Version": "0.3.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "glue",
+        "htmltools",
+        "rlang",
+        "shiny"
+      ],
+      "Hash": "704f0167ce6857051a48547e31d38060"
+    },
     "shiny.tailwind": {
       "Package": "shiny.tailwind",
       "Version": "0.2.2",
