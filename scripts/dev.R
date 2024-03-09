@@ -1,5 +1,10 @@
+source("./scripts/tailwind/tailwind.R")
+source("./scripts/node/node.R")
+
+build_node_packages()
 rhino::build_js()
 rhino::build_sass()
+build_tailwind(watch=TRUE)
 
 
 cached_func_with_file <- function(dir,

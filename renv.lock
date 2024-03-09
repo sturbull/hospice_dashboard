@@ -815,18 +815,6 @@
       ],
       "Hash": "704f0167ce6857051a48547e31d38060"
     },
-    "shiny.tailwind": {
-      "Package": "shiny.tailwind",
-      "Version": "0.2.2",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "R",
-        "htmltools",
-        "shiny"
-      ],
-      "Hash": "1194faa911d2ad6f73e2715a04de5ed7"
-    },
     "sourcetools": {
       "Package": "sourcetools",
       "Version": "0.1.7-1",

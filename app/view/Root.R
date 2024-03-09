@@ -1,6 +1,5 @@
 box::use(
   shiny[h1, h2, a, div, moduleServer, NS, tags],
-  shiny.tailwind[use_tailwind],
 )
 
 box::use(
@@ -15,11 +14,12 @@ FONT_URL <- "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900
 ui <- function(..., id, title = "Synergia Analytics", nav_menu = NULL, app_menu = NULL) {
   ns <- NS(id)
   div(
-    use_tailwind(
-      tailwindConfig = "app/styles/tailwind.config.js",
-    ),
     tags$head(
       tags$title(title),
+      tags$link(
+        rel="stylesheet",
+        href="static/css/tailwind.css"
+      ),
       tags$link(
         rel = "preconnect",
         href = "https://fonts.gstatic.com"
