@@ -3,7 +3,6 @@ box::use(
 )
 
 box::use(
-  app / components / react[NavMenu],
   app / view / layouts / AppBar,
   app / view / layouts / Footer,
 )
@@ -24,12 +23,6 @@ ui <- function(..., id, title = NULL, nav_menu = NULL, app_menu = NULL) {
       # div(
       #   class="fixed z-[51] w-12 h-16 bg-red-500"
       # ),
-      if (!is.null(nav_menu)) {
-        NavMenu(
-          id = ns("nav_menu"),
-          nav_menu
-        )
-      },
       div(
         id = ns("main"),
         class = "flex flex-col flex-grow subtle-scrollbar overflow-y-scroll min-h-screen pt-16",
