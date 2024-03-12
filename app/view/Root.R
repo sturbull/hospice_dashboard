@@ -34,7 +34,19 @@ ui <- function(..., id, title = "Synergia Analytics", nav_menu = NULL, app_menu 
         href = FONT_URL,
         media = "print",
         onload = 'this.media="all"'
-      )
+      ),
+      tags$script(
+        src = "static/js/three.min.js",
+        defer = TRUE
+      ),
+      tags$script(
+        src = "static/js/vanta.waves.min.js",
+        defer = TRUE
+      ),
+      tags$script(
+        src = "static/js/vanta.init.js",
+        defer = TRUE
+      ),
     ),
     AppLayout$ui(
       id = ns("layout"),
