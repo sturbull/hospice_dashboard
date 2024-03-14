@@ -1,7 +1,12 @@
 box::use(
-  shiny[div, tags, moduleServer, NS],
+  shiny[div, tags, moduleServer, NS, uiOutput,renderUI],
   shiny.router[is_page],
 )
+
+box::use(
+  app / logic / ReturnValueFunctions[GetHospiceUser]
+)
+
 
 #' @export
 ui <- function(..., id) {
@@ -17,8 +22,9 @@ ui <- function(..., id) {
       div(
         id = ns("content"),
         class = "relative z-10 flex-grow mx-auto w-full max-w-4xl flex flex-col gap-y-4 justify-center",
-        tags$h1("Totally Awesome Dashboard", class = "text-4xl font-bold md:text-6xl lg:text-7xl text-white"),
-        tags$h2("Because Steven thought it would be good to kill our client's GPUs...", class = "text-2xl text-sky-300")
+
+        tags$h1(uiOutput(ns("HospiceName")), class = "text-4xl font-bold md:text-6xl lg:text-7xl text-white"),
+        tags$h2("HospiceNZ Insights and Volumes Dashboard", class = "text-2xl text-sky-300")
       ),
       div(
         id = ns("bg"),
@@ -35,6 +41,10 @@ ui <- function(..., id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     print("Home module server part works!")
+
+    output$HospiceName <- renderUI({
+      return(paste0("Welcome ", GetHospiceUser(session),"!"))})
+
   })
 
 }

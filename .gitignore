@@ -5,3 +5,6 @@
 
 
 .idea
+data/metrics_admissionaccommodation_STAGE3.parquet
+*.parquet
+*.csv

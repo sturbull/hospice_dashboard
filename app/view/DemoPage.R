@@ -1,9 +1,20 @@
 box::use(
-  shiny[div, tags, moduleServer, NS],
+  shiny[div, tags, moduleServer, NS]
 )
+
 box::use(
-  app / view / home / Testing
+  app / logic / PlotPatientCategories
 )
+
+box::use(
+  app / logic / ReportPatientCounts
+  )
+
+
+box::use(
+  app / logic / ReportDeathCounts
+  )
+
 
 
 #' @export
@@ -27,8 +38,18 @@ ui <- function(..., id) {
     div(
       id = ns("content"),
       class = "bg-white h-full flex-grow px-8 py-6 rounded-lg shadow-lg dark:bg-slate-900",
-      tags$h1("Demo Page", class = "text-4xl font-bold text-sky-500"),
-      Testing$ui(id = ns("testing")),
+      tags$h1("Patients", class = "text-4xl font-bold text-sky-500"),
+      PlotPatientCategories$ui(id = ns("patient_categories")),
+
+    ),
+
+    div(
+      id = ns("content"),
+      class = "bg-white h-full flex-grow px-8 py-6 rounded-lg shadow-lg dark:bg-slate-900",
+      tags$h1("Key Information", class = "text-4xl font-bold text-sky-500"),
+     ReportPatientCounts$ui(id = ns("patient_counts")),
+     ReportDeathCounts$ui(id = ns("death_counts")),
+
     )
   )
 }
@@ -37,6 +58,9 @@ ui <- function(..., id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     print("Demo module server part works!")
-    Testing$server("testing")
+    PlotPatientCategories$server("patient_categories")
+    ReportPatientCounts$server("patient_counts")
+    ReportDeathCounts$server("death_counts")
+
   })
 }

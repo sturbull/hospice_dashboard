@@ -38,6 +38,6 @@ body(shiny_env$cachedFuncWithFile) <- body(cached_func_with_file)
 lockBinding("cachedFuncWithFile", shiny_env)
 options(shiny.autoreload = TRUE)
 
-# shiny::shinyOptions(shiny.autoreload = TRUE)
-# shiny::shinyOptions(shiny.autoreload.pattern = glob2rx("app/*\\.R$"))
+#shiny::shinyOptions(shiny.autoreload = TRUE)
+shiny::shinyOptions(shiny.autoreload.pattern = glob2rx("app/*\\.R$"))
 shiny::runApp(launch.browser = TRUE)
